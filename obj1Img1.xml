@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotation>
+   <filename>
+      <item>object1_img1.jpg</item>
+   </filename>
+   <object>
+      <name>object1</name>
+      <bndbox>
+         <xmin>165</xmin>
+         <ymin>218</ymin>
+         <xmax>289</xmax>
+         <ymax>350</ymax>
+      </bndbox>
+   </object>
+</annotation>
