@@ -1,3 +1,4 @@
+function []  = addBackground(num_objects, meshes_per_obj)
 % This is used to add a background image to a rendered mesh 
 % Further, it also saves the final resulting image to the folder:
 % object_dataset/data/Images
@@ -9,10 +10,11 @@
 % 2. The background images are availabe in background folder.
 % 3. The background images are named "bg_<number>.jpg"
 
+G_NUM_OBJECTS, self.meshes_per_obj, self.mode, self.curr_del, self.iter_k, self.cond
 clc; clear all; close all;
 
 % iterate all the objects
-for imgNo = 1:1200
+for imgNo = 1:str2num(num_objects)
 
     % some Initializations
     % Image we use as foreground
@@ -101,13 +103,14 @@ for imgNo = 1:1200
 
     % save the final resulting image in Images folder:
     % /home/isit/workspace/object_dataset/data/Images
-    savePath = '/home/isit/workspace/object_dataset/data/Images/';
+    savePath = '/home/shrinivasan/work/defoobjinwild/dataset/Images/';
     saveName = strcat('object',int2str(objClass), '_img', int2str(imgNo), '.jpg');
     saveAs = strcat(savePath,saveName);
     imwrite(res, saveAs, 'jpg');
     
     % Save annotation for the image in the *.xml file
-    xmlSavePath = '/home/isit/workspace/object_dataset/data/Annotations/';
+    % xmlSavePath = '/home/isit/workspace/object_dataset/data/Annotations/';
+    xmlSavePath = '/home/shrinivasan/work/defoobjinwild/dataset/Annotations/';
     saveAsXml(res, saveAs, objClass, imgNo, xmlSavePath, xmin, xmax, ymin, ymax);
 
     % finally, save the image filename without extension in the 
